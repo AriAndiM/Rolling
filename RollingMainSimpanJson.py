@@ -19,11 +19,11 @@ else:
 # Jika hari ini Sabtu, maka tanggal yang ditampilkan adalah Senin
 # Selain itu, tetap menampilkan besok
 def get_tomorrow_date():
-    today = datetime.now()
-    if today.weekday() == 5:  # 5 berarti Sabtu
+    today = datetime.today()  # Menggunakan today() agar sesuai zona waktu lokal
+    if today.weekday() == 5:  # Jika hari ini Sabtu (5)
         target_date = today + timedelta(days=2)  # Lompat ke Senin
     else:
-        target_date = today + timedelta(days=1)
+        target_date = today + timedelta(days=1)  # Besok untuk hari lainnya
     return target_date.strftime('%Y-%m-%d')  # Format YYYY-MM-DD untuk penyimpanan
 
 # Fungsi untuk rolling data selain "WSF"
