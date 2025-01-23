@@ -121,7 +121,7 @@ with tabs[1]:
             # Menampilkan hasil rolling dalam format JSON
             st.subheader("Hasil Rolling")
             history_json = json.dumps(history[selected_date], indent=4, ensure_ascii=False)
-            st.text_area("Output JSON", history_json, height=300)
+            st.text_area(" ", history_json, height=300)
             
             if st.button("Hapus Riwayat Tanggal Ini", type="secondary"):
                 del history[selected_date]
